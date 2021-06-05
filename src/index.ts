@@ -6,13 +6,19 @@ const matches = fs.readFileSync('football.csv', {
   .split('\n')
   .map((row: string) => row.split(','));
 
+enum MatchResults {
+  HomeWin = 'H',
+  AwayWin = 'A',
+  Draw = 'D',
+}
+
 let manUnitedWins = 0;
 for (const match of matches) {
-  if(match[1] === "Man united" && match[5] === "H") {
+  if (match[1] === "Man United" && match[5] === MatchResults.HomeWin) {
     manUnitedWins++;
-  } else if(match[2] === "Man United" && match[5] === "A"){
+  } else if (match[2] === "Man United" && match[5] === MatchResults.AwayWin) {
     manUnitedWins++;
   }
 }
 
-console.log(manUnitedWins)
+console.log(`Man United won ${manUnitedWins} matches.`)
