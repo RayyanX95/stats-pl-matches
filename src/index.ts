@@ -6,4 +6,13 @@ const matches = fs.readFileSync('football.csv', {
   .split('\n')
   .map((row: string) => row.split(','));
 
-console.log(matches)
+let manUnitedWins = 0;
+for (const match of matches) {
+  if(match[1] === "Man united" && match[5] === "H") {
+    manUnitedWins++;
+  } else if(match[2] === "Man United" && match[5] === "A"){
+    manUnitedWins++;
+  }
+}
+
+console.log(manUnitedWins)
