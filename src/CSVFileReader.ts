@@ -2,6 +2,9 @@ import fs from 'fs';
 import { dateStringToDate } from './utils';
 import { MatchResults } from './MatchResult';
 
+// Tuples
+type MatchData = [Date, string, string, number, number, MatchResults, string];
+
 export class CsvFileReader {
   data: MatchData[] = [];
   constructor(public filename: string) { }
