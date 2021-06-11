@@ -1,5 +1,6 @@
 export const dateStringToDate = (dataString: string): Date => {
   // 28/10/2018 =>  ['28', '10', '2018'] => [28, 10, 2018]
+  // Test Remote Explorer
   const dataParts = dataString
     .split('/')
     .map(value => parseInt(value));
